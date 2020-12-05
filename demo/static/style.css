@@ -1,0 +1,330 @@
+*
+{
+  box-sizing: border-box;
+}
+
+html, body 
+{
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.wrapper 
+{
+  display: flex;
+}
+
+.container
+{
+  width: 70%;
+}
+
+.body-wrapper
+{
+  flex-direction: column;
+
+  height: 100vh;
+  width: 100vw;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#question 
+{
+  flex-direction: row;
+  flex-shrink: 1;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 68px;
+  background-color: #ffffff;
+
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: #86838391 0px 0px 8px;
+}
+
+#question *
+{
+  margin: 10px 20px;
+}
+
+#question #logo
+{
+  flex-shrink: 0;
+}
+#question #logo img
+{
+  height: 46px;
+}
+
+#question #query
+{
+  flex-grow: 1;
+
+  padding: 10px 10px;
+  margin: 8px 0;
+}
+
+#question #submit
+{
+  border: none;
+  padding: 10px 0;
+  width: 102.95px;
+  
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#question.focus
+{
+  flex-direction: column;
+  
+  height: 100vh;
+
+  justify-content: center;
+}
+#question.focus ~ #answer
+{
+  display: none;
+}
+
+#question.focus *
+{
+  margin: 10pt 0;
+}
+
+#question.focus #logo
+{
+  text-align: center;
+}
+#question.focus #logo img
+{
+  height: 260px;
+}
+
+#question.focus #query
+{
+  flex-grow: 0;
+  width: 50%;
+}
+
+#question.focus #submit
+{
+  width: auto;
+  padding: 14px 90px;
+}
+
+#answer
+{
+  flex-direction: column;
+  flex-grow: 1;
+
+  min-height: 0;
+  padding-top: 68px;
+}
+
+pre 
+{
+  overflow-x: scroll !important;
+}
+
+.box
+{
+  margin: 12pt 0 0;
+  padding: 14pt 20pt;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: #86838391 0px 0px 10px;
+}
+.box:last-child
+{
+  margin-bottom: 12pt;
+}
+
+.header
+{
+  display: block;
+  overflow: auto;
+  margin-bottom: 10pt;
+  border-bottom: 1px solid black;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.header a
+{
+  float:right;
+  text-decoration: none;
+}
+
+.content, .content *
+{
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.content .image 
+{
+  display: block;
+  float: right;
+  max-height: 300px;
+  max-width: 250px;
+  margin-left: 10pt;
+}
+.content .image img
+{
+  height: 100%;
+  width: 100%;
+}
+.content .image img[src=""]
+{
+  display: none;
+}
+
+
+.content .summary
+{
+  text-align: justify;
+}
+
+
+
+
+/* Absolute Center Spinner */
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.9) 1.5em 0 0 0, rgba(255, 255, 255, 0.9) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.9) 0 1.5em 0 0, rgba(255, 255, 255, 0.9) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.9) 0 -1.5em 0 0, rgba(255, 255, 255, 0.9) 1.1em -1.1em 0 0;
+  box-shadow: rgba(255, 255, 255, 0.9) 1.5em 0 0 0, rgba(255, 255, 255, 0.9) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.9) 0 1.5em 0 0, rgba(255, 255, 255, 0.9) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.9) -1.5em 0 0 0, rgba(255, 255, 255, 0.9) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.9) 0 -1.5em 0 0, rgba(255, 255, 255, 0.9) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Answering System</title>
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="body-wrapper wrapper">
+    <form id="question" class="wrapper focus">
+      <label id="logo" for="query">
+        <img src="static/images/question-answer.png" alt="Question Answering System">
+      </label>
+      <input type="text" name="query" id="query" placeholder="Ask me something...">
+      <input type="submit" id="submit" value="ASK ME">
+    </form> <!-- #question -->
+    
+    <div id="answer" class="wrapper container">
+      <div id="sparql" class="box">
+        <span class="header">SPARQL</span>
+        <div class="content">
+          <pre>PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT * WHERE { ?person foaf:name ?name . ?person foaf:mbox ?email . }</pre>
+        </div>
+      </div> <!-- #sparql -->
+
+      <div id="results">
+        <div class="box">
+          <div class="header">
+            Hepatitis C
+            <a href="localhost:8000">WIKIPEDIA</a>
+          </div>
+          <div class="content">
+            <span class="image">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/HCV_EM_picture_2.png/450px-HCV_EM_picture_2.png" alt="Hepatitis C"">
+            </span>
+            <strong>Type:</strong> Disease
+            <p class="summary">
+              "Hepatitis C is an infectious disease caused by the hepatitis C virus (HCV) that primarily affects the liver. During the initial infection people often have mild or no symptoms. Occasionally a fever, dark urine, abdominal pain, and yellow tinged skin occurs. The virus persists in the liver in about 75% to 85% of those initially infected. Early on chronic infection typically has no symptoms. Over many years however, it often leads to liver disease and occasionally cirrhosis. In some cases, those with cirrhosis will develop complications such as liver failure, liver cancer, or esophageal and gastric varices."
+            </p>
+          </div>
+        </div> 
+
+      </div> <!-- #results -->
+    </div> <!-- #answer -->
+  </div> <!-- .body-wrapper -->
+
+  <div class="loading hidden">Loading&#8230;</div>
+
+  <script src='static/wikipedia.js'></script>
+  <script src='static/sweetalert.js'></script>
+  <script src="static/app.js"></script>
+</body>
+</html>

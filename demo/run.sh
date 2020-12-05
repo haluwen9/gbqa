@@ -1,0 +1,1 @@
+gunicorn -b :80 wsgi:app
