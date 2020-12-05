@@ -1,1 +1,1 @@
-gunicorn -b :80 wsgi:app
+gunicorn -b :8080 wsgi:app

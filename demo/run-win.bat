@@ -1,1 +1,1 @@
-waitress-serve --listen=*:80 wsgi:app
+waitress-serve --listen=*:8080 wsgi:app

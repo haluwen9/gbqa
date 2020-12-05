@@ -31,7 +31,7 @@ def dataset(list, download):
 @main.command()
 @click.option("-l", "--lists",
               is_flag=True,
-              help="Show all available models.")
+              help="Show all installed models.")
 @click.option("-t", "--train",
               type=str,
               help="Train and Save new model.\nUsage: `gbqa model --train MODELNAME --MODEL_TYPE`")
