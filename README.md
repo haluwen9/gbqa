@@ -63,6 +63,20 @@ gbqa model --install "path_to_model/model-name" --nmt # For NMT MODEL
 
 ---
 ### **GBQA Predict** `gbqa model [options] [options_args]`
+**Options list**
+- `--stdin/--file`: Predict from stdin or file. **Default:** stdin. *Support only stdin at the moment.
+- `-m, --model`: Model name to use (without model type postfix). **Default:** PRETRAIN model.
+- `--template/--nmt`: Model type to use. There are two type available, *TEMPLATE_BASED* and *NMT*. **Default:** *TEMPLATE_BASED*.
+
+**Examples**
+```bash
+# Predicting Sparql using Pre-trained NMT Model
+gbqa predict -m "PRETRAIN" --nmt
+
+# Predicting Sparql using niceguys Template Based Model
+gbqa predict -m "niceguys" --template
+```
+![gbqa predict -m "PRETRAIN" --nmt](figures/gbqa-predict.png "gbqa predict")
 
 ---
 ## **Demonstration Application**
